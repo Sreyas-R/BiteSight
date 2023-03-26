@@ -3,8 +3,15 @@ import { useState } from "react";
 import close from "../assets/close.svg";
 import menu from "../assets/menu.svg";
 import logo from "../assets/logonobg.png";
+import LoginCard from "./LoginCard";
+
 const Navbar = () => {
-  const [Toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+  const handleLoginClick = () => {
+    setIsLoginOpen(!isLoginOpen);
+  };
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
@@ -30,6 +37,7 @@ const Navbar = () => {
         </li>
         <li
           className={`font-poppins font-normal cursor-pointer text-[20px] text-gradient  mr-6`}
+          onClick={handleLoginClick}
         >
           Login
         </li>
@@ -37,14 +45,14 @@ const Navbar = () => {
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img
-          src={Toggle ? close : menu}
+          src={toggle ? close : menu}
           alt="menu"
           className="w-[28px] h-[28px] object-contain"
-          onClick={() => setToggle(!Toggle)}
+          onClick={() => setToggle(!toggle)}
         />
         <div
           className={`${
-            !Toggle ? "hidden" : "flex"
+            !toggle ? "hidden" : "flex"
           } p-8 bg-black-gradient absolute top-20 right-0 mx-4 my-6 min-w-[150px]
            rounded-xl sidebar`}
         >
@@ -58,12 +66,17 @@ const Navbar = () => {
             <li className="font-poppins font-medium cursor-pointer text-[16px] text-white ">
               <a href="#">Contact</a>
             </li>
-            <li className="font-poppins font-medium cursor-pointer text-[16px] text-gradient">
+            <li
+              className={`font-poppins font-medium cursor-pointer text-[16px] text-gradient`}
+              onClick={handleLoginClick}
+            >
               <a href="#">Login</a>
             </li>
           </ul>
         </div>
       </div>
+
+      {isLoginOpen && <LoginCard handleClose={() => setIsLoginOpen(false)} />}
     </nav>
   );
 };
