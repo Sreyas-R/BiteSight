@@ -29,7 +29,7 @@ const Hero = () => {
         <img
           src={bg}
           alt="billing"
-          className="w-[100%] h-[100%] relative z-[5]"
+          className="w-[85%] h-[85%] relative z-[5]"
         />
       </div>
     </section>
