@@ -4,11 +4,12 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Heroine from "./components/Heroine";
 import Footer from "./components/Footer";
+import Registration from "./components/Registration";
 const App = () => (
   <div className="bg-primary w-full overflow-hidden">
     <div className={`${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
-        <Navbar />
+        <Registration />
       </div>
     </div>
     <div className={`bg-primary ${styles.flexStart}`}>

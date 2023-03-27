@@ -34,10 +34,16 @@ const LoginContent = () => {
           />
         </div>
         <button
-          className="w-full font-poppins bg-blue-gradient text-white py-2 rounded hover:bg-blue-800 transition duration-200"
+          className="w-full font-poppins bg-blue-gradient text-white py-2 rounded hover:bg-blue-800 transition duration-200 "
           type="submit"
         >
           Login
+        </button>
+        <button
+          className="w-full font-poppins bg-blue-gradient text-white py-2 rounded hover:bg-blue-800 transition duration-200 mt-2"
+          type="submit"
+        >
+          New Registration
         </button>
       </form>
     </>
