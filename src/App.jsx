@@ -1,3 +1,5 @@
+// add me as a contributor felicia
+
 import React from "react";
 import styles from "./style";
 import Navbar from "./components/Navbar";
